@@ -1,0 +1,9 @@
+path: ../datasets/roboflow
+
+train: train/images
+val: valid/images
+test: test/images
+
+names: 
+  0: Water Stains
+  1: drinks Stains
