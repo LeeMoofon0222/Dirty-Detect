@@ -1,8 +1,17 @@
 path: ../桌面/Dirty-Detect
+
 train: train/images
+
 val: valid/images
+
 test: test/images
 
-names: 
-  0: Water Stains
-  1: drinks Stains
+nc: 1
+names: ['drinks Stains']
+
+roboflow:
+  workspace: ntut-fkont
+  project: dirty-detect
+  version: 4
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/ntut-fkont/dirty-detect/dataset/4

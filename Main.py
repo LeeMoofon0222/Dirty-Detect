@@ -1,11 +1,19 @@
+import torch
 from ultralytics import YOLO
-# import os
-# os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE" 
+from torch.utils.tensorboard import SummaryWriter
 
-# Load a model
-#model = YOLO("yolov8n.pt")  # load an official model
-model = YOLO("C:/Users/Moofon/桌面/Dirty-Detect/runs/detect/train6/weights/best.pt")  # load an official model
-model.conf = 0.1
-results = model.train(data="data.yaml", epochs=3)
-# Validate the model
-results = model.val(data="data.yaml")  # no arguments needed, dataset and settings remembered
+
+if __name__ == '__main__':
+    # 初始化YOLO模型
+    model = YOLO('yolov8n.pt')
+
+    # 設置訓練參數
+    data = "data.yaml"
+    epochs = 50
+    batch_size = 32
+
+    # 訓練模型
+    results = model.train(data=data, epochs=epochs, batch=batch_size, device=0)
+
+    # Validate the model
+    results = model.val(data=data)  # no arguments needed, dataset and settings remembered
