@@ -1,6 +1,5 @@
-import torch
 from ultralytics import YOLO
-from torch.utils.tensorboard import SummaryWriter
+
 
 
 if __name__ == '__main__':
@@ -9,8 +8,8 @@ if __name__ == '__main__':
 
     # 設置訓練參數
     data = "data.yaml"
-    epochs = 50
-    batch_size = 32
+    epochs = 100
+    batch_size = 64
 
     # 訓練模型
     results = model.train(data=data, epochs=epochs, batch=batch_size, device=0)
